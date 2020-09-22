@@ -1,0 +1,45 @@
+h1 {
+    color: #fcffeb;
+    margin: auto;
+    font-family: Arvo;
+}
+body {
+    font-family: Arvo;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, #283044 50%, #78a1bb 50%);
+}
+button {
+    font-family: Arvo;
+    color: black;
+    padding: 3px 4px 3px 4px;
+    background-color: #fcffeb;
+    border-radius: 4px;
+    border: 0;
+    margin: auto;
+    width: auto;
+}
+input {
+    background-color: #fcffeb;
+    border: 0;
+    border-radius: 4px;
+}
+#logoFea {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    height: auto;   
+}
+div {
+    margin: 5px auto;
+}
+.montante {
+    color: #fcffeb;
+}
+/* .center {
+    text-align: center;
+    width: 50%;
+} */
+
+/* #78a1bb #e7efc5*/
