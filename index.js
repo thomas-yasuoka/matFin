@@ -13,6 +13,10 @@ function getInputs() {
     return dict
 }
 
+function putHtml(id, ) {
+    return
+}
+
 function simpleInterest() {
     tempValues = getInputs();
     document.getElementById("montanteSimples").innerHTML = `O montante a juros simples é ${(tempValues.pv * (1 + tempValues.r * tempValues.n)).toFixed(2)}`;
