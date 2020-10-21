@@ -8,29 +8,56 @@
     <script src="index.js"></script>
 </head>
 <body>
-    <h1>Cálculo de Juros Simples</h1>
-    <main>
-    <div>
-        <input type="text" placeholder="Principal" id="principal">
-    </div>
-    <div>
-        <input type="text" placeholder="Taxa de Juros" id="taxaJuros">
-    </div>
-    <div>
-        <input type="text" placeholder="Número de Períodos" id="periodos">
-    </div>
-    <div>
-        <button type="button" onclick="simpleInterest(); compoundInterest(); continuousInterest()">Calcular Montante</button>
-    </div>
-    <div class = "montante" id="montanteSimples"></div>
-    <div class = "montante" id="montanteComposto"></div>
-    <div class = "montante" id="montanteContinuo"></div>
-    </main>
+    <section class="grid">
+        <section class="juros">
+            <h2>Cálculo de Juros Compostos</h2>
 
-    <img src="images/fea_usp.png" id="logoFea">
-    <!-- <button onclick=getInputs()> teste </button> -->
-    <!-- <div>testeestestestes</div> -->
-    <!-- <div>teste</div> -->
-    
+            <div>
+                <input type="text" placeholder="Principal" id="principal">
+            </div>
+            <div>
+                <input type="text" placeholder="Taxa de Juros" id="taxaJuros">
+            </div>
+            <div>
+                <input type="text" placeholder="Número de Períodos" id="periodos">
+            </div>
+            <div>
+                <button type="button" onclick="compoundInterest()">Calcular Montante</button>
+            </div>
+            <div class = "montante" id="montanteSimples"></div>
+            <div class = "montante" id="montanteComposto"></div>
+            <div class = "montante" id="montanteContinuo"></div>
+        
+            <img src="images/fea_usp.png" id="logoFea">
+        </section>
+
+        <!-- <button onclick=getInputs()> teste </button> -->
+        <!-- <div>testeestestestes</div> -->
+        <!-- <div>teste</div> -->
+
+        <section class="serie">
+            <h2>Cálculo através de série de pagamentos</h2>
+
+            <div>
+                <input type="text" placeholder="Depósito" id="deposito">
+            </div>
+            <div>
+                <input type="text" placeholder="Taxa de Juros" id="taxaJurosSeries">
+            </div>
+            <div>
+                <input type="text" placeholder="Número de Períodos" id="periodosSeries">
+            </div>
+            <div>
+                <button type="button" onclick="regularSeries()">Calcular Montante</button>
+            </div>
+            <div class = "montante" id="serieUniformePostecipada"></div>
+            <div class = "montante" id="montanteComposto"></div>
+            <div class = "montante" id="montanteContinuo"></div>
+        
+            <img src="images/fea_usp.png" id="logoFea">
+
+        </section>
+        
+    </section>
 </body>
 </html>

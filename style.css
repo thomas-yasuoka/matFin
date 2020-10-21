@@ -1,12 +1,12 @@
-h1 {
+h2 {
     color: #fcffeb;
     margin: auto;
     font-family: Arvo;
 }
 body {
     font-family: Arvo;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center;
+    justify-content: center; */
     background: linear-gradient(90deg, #283044 50%, #78a1bb 50%);
 }
 button {
@@ -16,8 +16,8 @@ button {
     background-color: #fcffeb;
     border-radius: 4px;
     border: 0;
-    margin: auto;
-    width: auto;
+    /* margin: auto; */
+    /* width: auto; */
 }
 input {
     background-color: #fcffeb;
@@ -33,7 +33,11 @@ input {
 }
 div {
     margin: 5px auto;
+    /* display: flex; */
 }
+/* input {
+    display: flex;
+} */
 .montante {
     color: #fcffeb;
 }
@@ -43,3 +47,12 @@ div {
 } */
 
 /* #78a1bb #e7efc5*/
+
+/* CSS grid layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.serie {
+    margin-left: 10px;
+}
