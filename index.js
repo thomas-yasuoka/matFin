@@ -50,3 +50,58 @@ function regularSeries() {
     calc = tempValues.R*((Math.pow(1 + tempValues.i, tempValues.n) - 1) / tempValues.i)
     document.getElementById("serieUniformePostecipada").innerHTML = `O montante a partir da série uniforme postecipada é ${calc.toFixed(2)}`;
 }
+
+var getJSON = function(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.responseType = 'json';
+    xhr.onload = function() {
+      var status = xhr.status;
+      if (status === 200) {
+        callback(null, xhr.response);
+      } else {
+        callback(status, xhr.response);
+      }
+    };
+    xhr.send();
+};
+
+function get_selic() {
+    let url = 'https://api.bcb.gov.br/dados/serie/bcdata.sgs.4390/dados?formato=json';
+    var prom;
+
+    prom = fetch(url)
+    .then(res => res.json())
+    .then((out) => {
+    // a = out;
+    // console.log('Checkout this JSON! ', out);
+    return out
+    })
+    .catch(err => { throw err });
+    return prom
+};
+
+function working_with_selic(){
+    prom = get_selic()
+    prom.then(function(result){
+        // you work the results here
+        console.log(result.slice(-2)[0])
+    })
+}
+
+// function getJSONP(url, success) {
+
+//     var ud = '_' + +new Date,
+//         script = document.createElement('script'),
+//         head = document.getElementsByTagName('head')[0] 
+//                || document.documentElement;
+
+//     window[ud] = function(data) {
+//         head.removeChild(script);
+//         success && success(data);
+//     };
+
+//     script.src = url.replace('callback=?', 'callback=' + ud);
+//     head.appendChild(script);
+
+// }
