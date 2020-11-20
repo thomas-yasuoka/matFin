@@ -107,6 +107,11 @@ function getInputsImob() {
     return dict
 }
 
+function limpar() {
+    document.getElementById("finImovel").innerHTML = "";
+    document.getElementById("tempo").innerHTML = "";
+}
+
 function finImob(tempo_compra) {
     inpts = getInputsImob();
     let dict = {}
