@@ -6,11 +6,13 @@
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Arvo" />
     <link rel="icon" href="images/fea_usp2.png" />
     <script src="index.js"></script>
-    <script src="https://unpkg.com/javascript-lp-solver/prod/solver.js"></script>
+    <!-- <script src="https://unpkg.com/javascript-lp-solver/prod/solver.js"></script> -->
+    <script src="https://unpkg.com/optimization-js@latest/dist/optimization.js"></script>
+    <!-- <script src="constraint.min.js"></script> -->
 </head>
 <body>
     <section class="grid">
-        <section class="juros">
+        <!-- <section class="juros">
             <h2>Cálculo de Juros Compostos</h2>
 
             <div>
@@ -29,6 +31,47 @@
             <div class = "montante" id="montanteComposto"></div>
             <div class = "montante" id="montanteContinuo"></div>
         
+            <img src="images/fea_usp.png" id="logoFea">
+        </section> -->
+
+        <section class="imob">
+            <h2>Cálculo de Financiamento Imobiliário</h2>
+
+            <div>
+                <input type="text" placeholder="R$" id="valorImovel">
+                <span>Valor do Imóvel (em R$)</span>
+            </div>
+            <div>
+                <input type="text" placeholder="%" id="entradaImovel">
+                <span>Entrada (em %)</span>
+            </div>
+            <div>
+                <input type="text" placeholder="número de anos" id="nImovel">
+                <span>Tempo do financiamento (em anos)</span>
+            </div>
+            <div>
+                <input type="text" placeholder="%" id="bancoJurosImovel">
+                <span>Taxa de juros cobrada pelo banco (anual, em %)</span>
+            </div>
+            <div>
+                <select id="nDormitorios">
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                </select>
+                <span>Número de Dormitórios</span>
+            </div>
+
+            <div>
+                <button type="button" onclick="finImob(11.25)">Calcular Montante</button>
+            </div>
+
+            <div class="montante" id="finImovel"></div>
+            
+            <!-- <div class = "montante" id="montanteSimples"></div>
+            <div class = "montante" id="montanteComposto"></div>
+            <div class = "montante" id="montanteContinuo"></div> -->
+
             <img src="images/fea_usp.png" id="logoFea">
         </section>
 
@@ -58,7 +101,6 @@
             <img src="images/fea_usp.png" id="logoFea">
 
         </section>
-        
     </section>
 </body>
 </html>
