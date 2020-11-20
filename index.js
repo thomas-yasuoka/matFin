@@ -110,6 +110,11 @@ function getInputsImob() {
 function limpar() {
     document.getElementById("finImovel").innerHTML = "";
     document.getElementById("tempo").innerHTML = "";
+    document.getElementById("valorImovel").value = "";
+    document.getElementById("entradaImovel").value = "";
+    document.getElementById("nImovel").value = "";
+    document.getElementById("bancoJurosImovel").value = "";
+    document.getElementById("nDormitorios").value = "";
 }
 
 function finImob(tempo_compra) {
@@ -158,12 +163,12 @@ function opt() {
         console.log(larger)
         if (larger != initial) {
             for (j = i - 1; j < i; j = j + 0.01){
-             console.log("NEW TEMPO", j)
-             console.log(larger)
+            //  console.log("NEW TEMPO", j)
+            //  console.log(larger)
              temp_dict = finImob(j)
              larger = temp_dict["roi"] > temp_dict["valorFinalImov"]
              if (larger != initial){
-                 console.log("TEMPO FINAL", j)
+                //  console.log("TEMPO FINAL", j)
                  diferenca = getInputsImob()["n"] - j;
                  document.getElementById("finImovel").innerHTML = `Em aproximadamente ${j.toFixed(2)} anos será possível viver no imóvel nele de aluguel por todo esse tempo`;
                  document.getElementById("tempo").innerHTML = `Tempo para financiar - tempo para comprar a vista em anos = ${(getInputsImob()["n"] - j).toFixed(2)}`
