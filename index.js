@@ -124,7 +124,7 @@ function finImob(tempo_compra) {
     let dict = {}
 
     // coisas q ainda vai mudar
-    tx_juros_mensal = 0.0075
+    tx_juros_mensal = inpt["i_banco"] / 12
     alupreco = {
         2: 0.0042,
         3: 0.0037,
