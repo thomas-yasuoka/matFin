@@ -101,7 +101,8 @@ function getInputsImob() {
         entrada: Number(document.getElementById("entradaImovel").value),
         n: Number(document.getElementById("nImovel").value),
         i_banco: Number(document.getElementById("bancoJurosImovel").value),
-        dorms: Number(document.getElementById("nDormitorios").value)
+        dorms: Number(document.getElementById("nDormitorios").value),
+        ret: Number(document.getElementById("retorno").value)
     };
 
     console.log(dict["dorms"])
@@ -131,7 +132,7 @@ function finImob(tempo_compra) {
         4: 0.0032
     }
     igpm = 0.03
-    renda_fixa = 0.11
+    renda_fixa = inpts["ret"]
     
 
     dict["aluguel"] = inpts["valor"] * alupreco[inpts["dorms"]];
