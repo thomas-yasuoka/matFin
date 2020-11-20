@@ -104,6 +104,7 @@ function getInputsImob() {
         dorms: Number(document.getElementById("nDormitorios").value)
     };
 
+    console.log(dict["dorms"])
     return dict
 }
 
@@ -123,11 +124,16 @@ function finImob(tempo_compra) {
 
     // coisas q ainda vai mudar
     tx_juros_mensal = 0.0075
-    alupreco = 0.0037
+    alupreco = {
+        2: 0.0042,
+        3: 0.0037,
+        4: 0.0032
+    }
     igpm = 0.03
     renda_fixa = 0.11
+    
 
-    dict["aluguel"] = inpts["valor"] * alupreco;
+    dict["aluguel"] = inpts["valor"] * alupreco[inpts["dorms"]];
     dict["banco"] = inpts["valor"] - inpts["valor"] * inpts["entrada"];
     dict["parcela"] = dict["banco"] * (tx_juros_mensal / (1 - Math.pow((1 + tx_juros_mensal), (-inpts["n"]*12))));
     dict["valorTotalFin"] = dict["parcela"] * inpts["n"] * 12;
@@ -170,8 +176,9 @@ function opt() {
              if (larger != initial){
                 //  console.log("TEMPO FINAL", j)
                  diferenca = getInputsImob()["n"] - j;
+                 document.getElementById("valorTotal").innerHTML = `O valor total do financiamento será R$ ${temp_dict["valorFinalImov"].toFixed(2)}`
                  document.getElementById("finImovel").innerHTML = `Em aproximadamente ${j.toFixed(2)} anos será possível viver no imóvel nele de aluguel por todo esse tempo`;
-                 document.getElementById("tempo").innerHTML = `Tempo para financiar - tempo para comprar a vista em anos = ${(getInputsImob()["n"] - j).toFixed(2)}`
+                 document.getElementById("tempo").innerHTML = `Tempo para financiar - tempo para comprar a vista em anos = ${(getInputsImob()["n"] - j).toFixed(2)}`;
                  return temp_dict
              }
             }
