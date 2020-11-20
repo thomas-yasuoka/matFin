@@ -109,6 +109,7 @@ function getInputsImob() {
 }
 
 function limpar() {
+    document.getElementById("valorTotal").innerHTML = "";
     document.getElementById("finImovel").innerHTML = "";
     document.getElementById("tempo").innerHTML = "";
     document.getElementById("valorImovel").value = "";
@@ -116,7 +117,6 @@ function limpar() {
     document.getElementById("nImovel").value = "";
     document.getElementById("bancoJurosImovel").value = "";
     document.getElementById("nDormitorios").value = "";
-    document.getElementById("valorTotal").value = "";
 }
 
 function finImob(tempo_compra) {
@@ -177,7 +177,7 @@ function opt() {
              if (larger != initial){
                 //  console.log("TEMPO FINAL", j)
                  diferenca = getInputsImob()["n"] - j;
-                 document.getElementById("valorTotal").innerHTML = `O valor total do financiamento será <span class=inline style="color: #B084CC">R$ ${temp_dict["valorFinalImov"].toFixed(2)}</span>`
+                 document.getElementById("valorTotal").innerHTML = `O valor total do financiamento será <span class=inline style="color: #B084CC">R$ ${temp_dict["valorFinalImov"].toFixed(2)}</span>`;
                  document.getElementById("finImovel").innerHTML = `Em aproximadamente <span class=inline style="color: #B084CC">${j.toFixed(2)}</span> anos será possível viver no imóvel nele de aluguel por todo esse tempo`;
                  document.getElementById("tempo").innerHTML = `Diferença entre o tempo de financiar e o tempo para comprar à vista, após morar de aluguel e investir no CDI (em anos): <span class=inline style="color: #B084CC">${(getInputsImob()["n"] - j).toFixed(2)}</span>`;
                  // cor antiga: #665687
