@@ -124,7 +124,7 @@ function finImob(tempo_compra) {
     let dict = {}
 
     // coisas q ainda vai mudar
-    tx_juros_mensal = inpt["i_banco"] / 12
+    tx_juros_mensal = inpts["i_banco"] / 12
     alupreco = {
         2: 0.0042,
         3: 0.0037,
@@ -146,14 +146,6 @@ function finImob(tempo_compra) {
     console.log(dict)
 
     return dict
-
-    // if (Math.round(dict["roi"], 0) != Math.round(dict["valorFinalImov"], 0)){
-    //     console.log('THIS ONE FAILED')
-    //     return Infinity
-    // } else {
-    //     console.log("SUCCESS???")
-    //     return dict["roi"]
-    // }
 }
 
 
@@ -184,9 +176,10 @@ function opt() {
                  return temp_dict
              }
             }
-        }
+        } else {
+            document.getElementById("valorTotal").innerHTML = "Os valores que você colocou iriam demorar mais de 100 anos para serem financiados"
+               }
     }
-
 }
 
 
