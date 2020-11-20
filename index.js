@@ -126,24 +126,55 @@ function finImob(tempo_compra) {
     dict["roi"] = (dict["finMinusAlug"]*12) * (Math.pow((1 + renda_fixa), (tempo_compra - 1)) - 1) / renda_fixa;
 
     dict["valorFinalImov"] = inpts["valor"] * Math.pow((1 + igpm), tempo_compra);
-
-    document.getElementById("finImovel").innerHTML = `O valor final do imóvel é ${dict['valorFinalImov']}`;
-    console.log("TEMPO", tempo_compra)
     console.log(dict)
 
-    if (Math.round(dict["roi"], 0) != Math.round(dict["valorFinalImov"], 0)){
-        console.log('THIS ONE FAILED')
-        return Infinity
-    } else {
-        console.log("SUCCESS???")
-        return dict["roi"]
-    }
+    return dict
+
+    // if (Math.round(dict["roi"], 0) != Math.round(dict["valorFinalImov"], 0)){
+    //     console.log('THIS ONE FAILED')
+    //     return Infinity
+    // } else {
+    //     console.log("SUCCESS???")
+    //     return dict["roi"]
+    // }
 }
 
+
 function opt() {
-    optimjs = window.optimjs
-    optimjs.minimize_Powell()
+    let larger;
+    let temp_dict;
+    let temp = finImob(1);
+    let initial = temp["roi"] > temp["valorFinalImov"]
+
+    for (i = 1; i < 100; i++) {
+        console.log("TEMPO", i)
+        temp_dict = finImob(i);
+        larger = temp_dict["roi"] > temp_dict["valorFinalImov"]
+        console.log(larger)
+        if (larger != initial) {
+            for (j = i - 1; j < i; j = j + 0.01){
+             console.log("NEW TEMPO", j)
+             console.log(larger)
+             temp_dict = finImob(j)
+             larger = temp_dict["roi"] > temp_dict["valorFinalImov"]
+             if (larger != initial){
+                 console.log("TEMPO FINAL", j)
+                 diferenca = getInputsImob()["n"] - j;
+                 document.getElementById("finImovel").innerHTML = `Em aproximadamente ${j.toFixed(2)} anos será possível viver no imóvel nele de aluguel por todo esse tempo`;
+                 document.getElementById("tempo").innerHTML = `Tempo para financiar - tempo para comprar a vista em anos = ${(getInputsImob()["n"] - j).toFixed(2)}`
+                 return temp_dict
+             }
+            }
+        }
+    }
+
 }
+
+
+// function opt() {
+//     optimjs = window.optimjs
+//     optimjs.minimize_Powell()
+// }
 
 // x^2 + 10x (min x=-5, y=-25)
 
