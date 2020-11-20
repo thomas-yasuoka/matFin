@@ -27,6 +27,9 @@ button:hover {
 span {
     font-size: 75%;
 }
+span.inline{
+    font-size: 100%;
+}
 input {
     background-color: #fcffeb;
     border: 0;
@@ -46,7 +49,7 @@ select {
     height: auto;   
 }
 div {
-    margin: 5px auto;
+    margin: 10px auto;
     color: #fcffeb;
     /* display: flex; */
 }

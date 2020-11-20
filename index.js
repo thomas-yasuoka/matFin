@@ -176,9 +176,9 @@ function opt() {
              if (larger != initial){
                 //  console.log("TEMPO FINAL", j)
                  diferenca = getInputsImob()["n"] - j;
-                 document.getElementById("valorTotal").innerHTML = `O valor total do financiamento será R$ ${temp_dict["valorFinalImov"].toFixed(2)}`
-                 document.getElementById("finImovel").innerHTML = `Em aproximadamente ${j.toFixed(2)} anos será possível viver no imóvel nele de aluguel por todo esse tempo`;
-                 document.getElementById("tempo").innerHTML = `Tempo para financiar - tempo para comprar a vista em anos = ${(getInputsImob()["n"] - j).toFixed(2)}`;
+                 document.getElementById("valorTotal").innerHTML = `O valor total do financiamento será <span class=inline style="color: #665687">R$ ${temp_dict["valorFinalImov"].toFixed(2)}</span>`
+                 document.getElementById("finImovel").innerHTML = `Em aproximadamente <span class=inline style="color: #665687">${j.toFixed(2)}</span> anos será possível viver no imóvel nele de aluguel por todo esse tempo`;
+                 document.getElementById("tempo").innerHTML = `Diferença entre o tempo de financiar e o tempo para comprar à vista, após morar de aluguel e investir no CDI (em anos): <span class=inline style="color: #665687">${(getInputsImob()["n"] - j).toFixed(2)}</span>`;
                  return temp_dict
              }
             }
