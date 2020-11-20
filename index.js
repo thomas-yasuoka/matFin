@@ -118,6 +118,7 @@ function limpar() {
     document.getElementById("nImovel").value = "";
     document.getElementById("bancoJurosImovel").value = "";
     document.getElementById("nDormitorios").value = "";
+    document.getElementById("retorno").value = "";
 }
 
 function finImob(tempo_compra) {
